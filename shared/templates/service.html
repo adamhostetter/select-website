@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  Select Service Page Template
+  ============================================================
+
+  Used to hydrate each per-service page under services/<slug>.html
+  from services/<slug>/config.json. Mirrors the FirstCall Columbus
+  service-page pattern: page-hero, feature-grid, info-grid (why),
+  cta-band — but with no multi-location picker (Select is single
+  location: West Babylon NY).
+
+  Build directives:
+    INLINE_CSS         tokens + base + components + service
+    INLINE_LOGO_WHITE  shared/img/logos/select-hero-white.svg
+    INLINE_BRANCH_JS   shared/js/site.js
+  ============================================================
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{title}} — Select</title>
+  <meta name="description" content="{{metaDescription}}" />
+  <link rel="canonical" href="{{canonicalUrl}}" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="{{title}} — Select" />
+  <meta property="og:description" content="{{metaDescription}}" />
+  <meta property="og:url" content="{{canonicalUrl}}" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* {{INLINE_CSS}} */
+  </style>
+</head>
+
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- HEADER -->
+  <header class="site-header" role="banner">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="../index.html" aria-label="Select, home">
+        <!-- {{INLINE_LOGO_WHITE}} — Select hero mark (white) -->
+        <span class="site-header__tagline">Since 1980</span>
+      </a>
+
+      <nav class="site-nav" data-site-nav aria-label="Primary">
+        <div class="site-nav__dropdown-wrap" data-dropdown>
+          <button type="button" class="site-nav__link site-nav__dropdown-toggle"
+                  aria-haspopup="true" aria-expanded="false" data-dropdown-toggle>
+            Services
+            <svg class="site-nav__caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4 L6 8 L10 4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="site-nav__dropdown" data-dropdown-menu>
+            <a class="site-nav__dropdown-link" href="commercial-hvac.html">Commercial HVAC</a>
+            <a class="site-nav__dropdown-link" href="building-controls.html">Building Controls</a>
+            <a class="site-nav__dropdown-link" href="commercial-refrigeration.html">Commercial Refrigeration</a>
+            <a class="site-nav__dropdown-link" href="planned-maintenance.html">Planned Maintenance</a>
+            <a class="site-nav__dropdown-link" href="emergency.html">Emergency Services</a>
+            <a class="site-nav__dropdown-link" href="project-support.html">Project Support</a>
+          </div>
+        </div>
+
+        <a class="site-nav__link" href="https://firstcallmechanical.com/locations.html" target="_blank" rel="noopener">FirstCall Locations</a>
+        <a class="site-nav__link" href="{{careersUrl}}" target="_blank" rel="noopener">Careers</a>
+        <a class="site-nav__link" href="../index.html#contact">Contact</a>
+      </nav>
+
+      <div class="site-header__cta">
+        <a class="btn btn--primary btn--sm hide-mobile" href="../index.html#contact">Request Service</a>
+        <button class="menu-toggle" data-menu-toggle aria-label="Open menu" aria-expanded="false">
+          <span class="menu-toggle__bars" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- 1. PAGE HERO -->
+    <section class="page-hero">
+      <div class="container">
+        <div class="page-hero__inner">
+          <span class="page-hero__eyebrow">Service</span>
+          <h1 class="page-hero__title">{{title}}</h1>
+          <p class="page-hero__lede">{{lede}}</p>
+        </div>
+      </div>
+    </section>
+
+    {{#if showResidentialExtras}}
+    <!-- 1a. SOCIAL PROOF STRIP (residential only) -->
+    <section class="social-proof-strip">
+      <div class="container social-proof-strip__inner">
+        <a class="social-proof__google" href="{{socialProof.googleProfileUrl}}" target="_blank" rel="noopener">
+          <span class="social-proof__stars" style="--rating: {{socialProof.googleStars}};" aria-hidden="true">★★★★★</span>
+          <span class="social-proof__rating">{{socialProof.googleStars}}</span>
+          <span class="social-proof__count">from {{socialProof.googleReviewCount}} Google reviews</span>
+        </a>
+        <a class="social-proof__bbb" href="{{socialProof.bbbProfileUrl}}" target="_blank" rel="noopener">
+          <span class="social-proof__bbb-badge">BBB</span>
+          <span class="social-proof__bbb-rating">{{socialProof.bbbRating}} Rated</span>
+        </a>
+        <div class="social-proof__pricing">{{pricingPromise}}</div>
+      </div>
+    </section>
+    {{/if}}
+
+    <!-- 2. WHAT'S INCLUDED — feature grid -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">{{featuresEyebrow}}</span>
+          <h2>{{featuresHeading}}</h2>
+          <p class="lead">{{featuresLead}}</p>
+        </div>
+        <div class="feature-grid">
+          {{#each features}}
+          <article class="feature">
+            <span class="feature__icon" aria-hidden="true">{{icon}}</span>
+            <h3>{{title}}</h3>
+            <p>{{body}}</p>
+          </article>
+          {{/each}}
+        </div>
+      </div>
+    </section>
+
+    {{#if showResidentialExtras}}
+    <!-- 2a. REAL CUSTOMER TESTIMONIALS (residential only) -->
+    <section class="section section--soft">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">From your neighbors</span>
+          <h2>What homeowners are saying.</h2>
+          <p class="lead">Real reviews from real customers — pulled from our Google Business profile. <a href="{{socialProof.googleProfileUrl}}" target="_blank" rel="noopener">Read all {{socialProof.googleReviewCount}} →</a></p>
+        </div>
+        <div class="testimonials-grid">
+          {{#each testimonials}}
+          <article class="testimonial">
+            <div class="testimonial__stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote class="testimonial__quote">{{quote}}</blockquote>
+            <footer class="testimonial__attribution">
+              <span class="testimonial__name">{{name}}</span>
+              <span class="testimonial__location"> · {{location}}</span>
+            </footer>
+          </article>
+          {{/each}}
+        </div>
+      </div>
+    </section>
+    {{/if}}
+
+    <!-- 3. WHY IT MATTERS — two-column info block -->
+    <section class="section section--soft">
+      <div class="container">
+        <div class="info-grid">
+          <div>
+            <span class="eyebrow">{{whyEyebrow}}</span>
+            <h2>{{whyHeading}}</h2>
+            {{#each whyParagraphs}}
+            <p>{{this}}</p>
+            {{/each}}
+          </div>
+          <div>
+            <ul>
+              {{#each whyBullets}}
+              <li>{{this}}</li>
+              {{/each}}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {{#if showResidentialExtras}}
+    <!-- 3a. SERVICE AREA + TRUST BADGES (residential only) -->
+    <section class="section">
+      <div class="container">
+        <div class="service-trust-grid">
+          <div class="service-area">
+            <span class="eyebrow">Service Area</span>
+            <h2>Southwest Virginia, county to county.</h2>
+            <p>Our trucks roll out of Lebanon daily across:</p>
+            <ul class="service-area__counties">
+              {{#each serviceArea.counties}}
+              <li>{{this}} County</li>
+              {{/each}}
+            </ul>
+            <p class="service-area__towns-label">Including (but not limited to):</p>
+            <p class="service-area__towns">
+              {{#each serviceArea.towns}}<span>{{this}}</span>{{/each}}
+            </p>
+            <p class="service-area__note">Not sure if we cover your town? <a href="../index.html#contact">Ask us</a> — if it's close, we probably do.</p>
+          </div>
+          <div class="trust-badges-col">
+            <span class="eyebrow">Why homeowners trust us</span>
+            <h2>50 years of receipts.</h2>
+            <ul class="trust-badges">
+              {{#each trustBadges}}
+              <li class="trust-badge">
+                <span class="trust-badge__check" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </span>
+                <span class="trust-badge__label">{{label}}</span>
+              </li>
+              {{/each}}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    {{/if}}
+
+    <!-- 4. CTA BAND (no location picker — Select is single-location) -->
+    <section class="cta-band">
+      <div class="container cta-band__inner">
+        <span class="eyebrow" style="color: var(--color-accent)">{{ctaEyebrow}}</span>
+        <h2>{{ctaHeading}}</h2>
+        <p>{{ctaParagraph}}</p>
+        <div class="cta-band__row">
+          <a class="btn btn--primary btn--lg" href="../index.html#contact">Request a Proposal</a>
+          <a class="btn btn--lg" href="tel:+16316945287" style="background:transparent;color:#fff;border-color:rgba(255,255,255,.4)">Call (631) 694-5287</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div class="site-footer__brand">
+          <!-- {{INLINE_LOGO_WHITE}} — Select hero mark in white -->
+          <p>Select — commercial HVAC, building controls, and commercial refrigeration across Long Island and the New York metro area since 1980. Planned maintenance and 24/7 emergency response.</p>
+        </div>
+        <div>
+          <div class="site-footer__heading">Services</div>
+          <ul class="site-footer__list">
+            <li><a href="commercial-hvac.html">Commercial HVAC</a></li>
+            <li><a href="building-controls.html">Building Controls</a></li>
+            <li><a href="commercial-refrigeration.html">Commercial Refrigeration</a></li>
+            <li><a href="planned-maintenance.html">Planned Maintenance</a></li>
+            <li><a href="emergency.html">Emergency Services</a></li>
+            <li><a href="project-support.html">Project Support</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="site-footer__heading">West Babylon</div>
+          <ul class="site-footer__list">
+            <li><span>210 Dale Street</span></li>
+            <li><span>West Babylon, NY 11704</span></li>
+            <li><a href="tel:+16316945287">(631) 694-5287</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="site-footer__heading">Connect</div>
+          <ul class="site-footer__list">
+            <li><a href="{{careersUrl}}" target="_blank" rel="noopener">Careers</a></li>
+            <li><a href="../index.html#contact">Contact</a></li>
+            <li><a href="https://firstcallmechanical.com" target="_blank" rel="noopener">FirstCall Mechanical</a></li>
+            <li><a href="https://firstcallmechanical.com/locations.html" target="_blank" rel="noopener">FirstCall Locations</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="site-footer__bottom">
+        <span>&copy; {{copyrightYear}} Select, a FirstCall company. All rights reserved.</span>
+        <span><a href="#">Privacy</a> &middot; <a href="#">Terms</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /* {{INLINE_BRANCH_JS}} — mobile-nav toggle, header scroll, dropdowns */
+  </script>
+</body>
+</html>
