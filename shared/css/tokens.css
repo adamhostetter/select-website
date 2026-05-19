@@ -1,52 +1,52 @@
 /* ============================================================
-   Select Design Tokens — standard FirstCall Mechanical palette
+   Select Design Tokens — exact mirror of Columbus FCM page
 
-   Per Adam: Select uses the FCM corporate palette (forest green
-   primary, bright blue accent). Mirrored from Website Redesign/
-   shared/css/tokens.css verbatim, with the Starnes layout
-   extensions (--pad-x, wider container, navy-tinted shadows
-   retuned to green family).
+   Values copied verbatim from Website Redesign/columbus.html
+   inline :root block (per Adam's instruction to match
+   Columbus exactly). Cream page bg, dark navy text, deep blue
+   accent — NOT the FCG forest-green dark scheme.
+
+   Extra tokens beyond what Columbus inlines (--space-11,
+   --leading-snug, --font-mono, extended container sizes, etc.)
+   are kept because Select's other CSS files (base.css,
+   components.css, branch.css, service.css) reference them.
+   Those don't affect color rendering.
    ============================================================ */
 
 :root {
   /* --------------------------------------------------------
-     COLOR — Brand
-     Forest green dominates (page bg, sections, header, footer).
-     Blue is the highlight (CTAs, eyebrows, map pins).
-     Greens derived from the FirstCall Group logo's #1A4120.
+     COLOR — Brand (from Columbus inline :root)
      -------------------------------------------------------- */
   --color-primary:        #1A4120;
   --color-primary-dark:   #0F2814;
   --color-primary-mid:    #2D5F36;
   --color-primary-soft:   #4A7D52;
 
-  /* Accent — bright blue. Pops against dark green bg.
-     Used for CTAs, eyebrows, links, map pins, hex highlights. */
-  --color-accent:         #5BA3D6;
-  --color-accent-dark:    #00558C;
-  --color-accent-light:   #88B8D6;
+  --color-accent:         #00558C;
+  --color-accent-dark:    #003D66;
+  --color-accent-light:   #5BA3D6;
 
   /* --------------------------------------------------------
-     COLOR — Backgrounds (all greens)
+     COLOR — Surfaces (cream page bg, white cards)
      -------------------------------------------------------- */
-  --color-bg:             #1A4120;
-  --color-bg-soft:        #214D2A;
-  --color-bg-section:     #143619;
+  --color-bg:             #FCFBF7;
+  --color-bg-soft:        #F4F2EA;
+  --color-bg-section:     #EDE9DC;
   --color-bg-dark:        #0F2814;
-  --color-bg-card:        #2D5F36;
+  --color-bg-card:        #FFFFFF;
 
-  --color-text:           #F2EFE3;
-  --color-text-muted:     #C9C7B7;
-  --color-text-light:     #8E8C7E;
+  --color-text:           #1A2331;
+  --color-text-muted:     #5A6371;
+  --color-text-light:     #8A93A1;
   --color-text-on-dark:   #F2EFE3;
   --color-text-on-primary:#FFFFFF;
 
-  --color-border:         #2D5F36;
-  --color-border-strong:  #4A7D52;
+  --color-border:         #E5E1D2;
+  --color-border-strong:  #C9C7B7;
   --color-border-dark:    #0F2814;
 
   /* --------------------------------------------------------
-     INDUSTRIES-GRID TIER TOKENS
+     INDUSTRIES-GRID TIER TOKENS (Columbus values)
      -------------------------------------------------------- */
   --fc-tier-1:        #0B2E4F;
   --fc-tier-2:        #1E5A8A;
@@ -63,7 +63,7 @@
   --color-info:           #5BA3D6;
 
   /* --------------------------------------------------------
-     TYPOGRAPHY
+     TYPOGRAPHY (Columbus values)
      -------------------------------------------------------- */
   --font-display: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-body:    "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -97,7 +97,7 @@
   --tracking-wide:   0.02em;
   --tracking-caps:   0.08em;
 
-  /* SPACING */
+  /* SPACING (Columbus + extension --space-11 for branch.css) */
   --space-1:   0.25rem;
   --space-2:   0.5rem;
   --space-3:   0.75rem;
@@ -110,7 +110,7 @@
   --space-10:  8rem;
   --space-11: 10rem;
 
-  /* LAYOUT */
+  /* LAYOUT (Columbus values + sm/md/lg/xl kept for component breakpoints) */
   --container-sm:  640px;
   --container-md:  768px;
   --container-lg: 1024px;
@@ -122,7 +122,7 @@
   --header-height-mobile: 64px;
   --pad-x: clamp(1.25rem, 4vw, 3rem);
 
-  /* RADII */
+  /* RADII (Columbus values + radius-none/2xl kept for components.css) */
   --radius-none: 0;
   --radius-sm:   4px;
   --radius-md:   8px;
@@ -131,14 +131,14 @@
   --radius-2xl:  24px;
   --radius-pill: 999px;
 
-  /* SHADOWS — tuned for dark green surfaces */
+  /* SHADOWS (Columbus values + shadow-xs kept) */
   --shadow-xs: 0 1px 2px rgba(15, 42, 31, 0.04);
   --shadow-sm: 0 1px 3px rgba(15, 42, 31, 0.06), 0 1px 2px rgba(15, 42, 31, 0.04);
   --shadow-md: 0 4px 12px rgba(15, 42, 31, 0.08), 0 2px 4px rgba(15, 42, 31, 0.04);
   --shadow-lg: 0 12px 32px rgba(15, 42, 31, 0.10), 0 4px 8px rgba(15, 42, 31, 0.04);
   --shadow-xl: 0 24px 48px rgba(15, 42, 31, 0.14), 0 8px 16px rgba(15, 42, 31, 0.06);
 
-  /* MOTION */
+  /* MOTION (Columbus values + ease-in-out kept) */
   --ease-out:     cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in-out:  cubic-bezier(0.4, 0, 0.2, 1);
   --duration-fast:   150ms;
@@ -153,9 +153,7 @@
   --z-overlay:  400;
   --z-modal:    500;
   --z-toast:    600;
-}
 
-/* Focus ring uses primary blue at 35% alpha for visibility on green surfaces. */
-:root {
+  /* Focus ring (Columbus value) */
   --focus-ring: 0 0 0 3px rgba(0, 85, 140, 0.35);
 }
