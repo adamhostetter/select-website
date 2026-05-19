@@ -93,9 +93,9 @@
   font-weight: var(--weight-semibold);
   text-transform: uppercase;
   letter-spacing: var(--tracking-caps);
-  color: var(--color-accent);
+  color: #fff;
   margin-bottom: var(--space-4);
-  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
 }
 .branch-hero__title {
   font-family: var(--font-display);
