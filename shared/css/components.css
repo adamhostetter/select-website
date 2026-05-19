@@ -340,7 +340,7 @@
   top: 0;
   z-index: var(--z-header);
   background: #0F2814;
-  min-height: 160px;
+  height: var(--header-height);
   display: flex;
   align-items: center;
   transition: box-shadow var(--duration-base) var(--ease-out);
@@ -369,7 +369,7 @@
 }
 
 .site-header__logo svg {
-  height: 120px;
+  height: 60px;
   width: auto;
   display: block;
 }
