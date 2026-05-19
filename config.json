@@ -11,7 +11,7 @@
   "phoneEmergency": "",
   "phoneEmergencyE164": "",
   "phoneEmergencyTodo": "Optional — does Select run a separate 24/7 emergency line, or does the main number cover after-hours? If main number does double duty, leave blank and we'll route the emergency CTA to the main phone.",
-  "email": "dispatch@selectenv.com",
+  "email": "service@selectenv.com",
   "emailTodo": "Placeholder per Adam. Replace with the real dispatch alias once confirmed.",
 
   "address": {

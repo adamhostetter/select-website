@@ -23,7 +23,7 @@ Run `cd "Select" && node scripts/dev-server.js` to preview locally, or open `Sel
 | Tagline | A FirstCall Company |
 | Domain | selectenv.com |
 | Phone | (631) 694-5287 |
-| Email | dispatch@selectenv.com *(placeholder)* |
+| Email | service@selectenv.com |
 | Address | 210 Dale Street, West Babylon, NY 11704 |
 | Founding year | 1980 |
 | Brand palette | FCM standard: #1A4120 forest green, #5BA3D6 accent blue |
@@ -37,10 +37,8 @@ Run `cd "Select" && node scripts/dev-server.js` to preview locally, or open `Sel
 
 ## Lower-priority Todos (in config files)
 
-- Dispatch email — `dispatch@selectenv.com` is a placeholder; confirm real alias
 - Optional 24/7 emergency line — currently main number does double duty; add a separate emergency line here if one exists
 - Map coordinates — approximated to West Babylon centroid; refine to 210 Dale St pin
 - Photo strip — `photoStrip` array empty; add 2+ job-site shots to `shared/img/photos/select/`
-- Industries lead sentence — landmark names ("Babylon Town Dock", "Bay Shore", "Stony Brook") are best-guess; swap for actual customer types if Select prefers different anchors
 - Careers URL — currently links to FirstCall Mechanical careers hub; flip to Select-specific page if one exists
 - Equipment list — adapted for HVAC + controls + refrigeration scope; have the West Babylon team review for accuracy

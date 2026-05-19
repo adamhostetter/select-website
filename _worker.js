@@ -28,7 +28,7 @@ export default {
 // One row per form. Each value is the recipient list for that form.
 // Adding a new form: add a row here AND set <input name="_form" value="..."> in the page.
 const FORM_ROUTING = {
-  "select-contact": ["dispatch@selectenv.com", "Adam.Hostetter@firstcallgroup.com"],
+  "select-contact": ["service@selectenv.com", "Adam.Hostetter@firstcallgroup.com"],
 };
 
 const FORM_LABELS = {
