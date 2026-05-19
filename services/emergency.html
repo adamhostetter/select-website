@@ -155,8 +155,8 @@
   --container-2xl: 1600px;
   --container-content: 1440px;
 
-  --header-height: 80px;
-  --header-height-mobile: 64px;
+  --header-height: 160px;
+  --header-height-mobile: 100px;
   --pad-x: clamp(1.25rem, 4vw, 3rem);
 
   /* RADII (Columbus values + radius-none/2xl kept for components.css) */
@@ -824,22 +824,15 @@ small, .text-small { font-size: var(--text-sm); }
   position: sticky;
   top: 0;
   z-index: var(--z-header);
-  background: rgba(15, 40, 20, 0.92);
-  backdrop-filter: saturate(180%) blur(10px);
-  -webkit-backdrop-filter: saturate(180%) blur(10px);
-  border-bottom: 1px solid rgba(74, 125, 82, 0.35);
-  min-height: 120px;
+  background: #0F2814;
+  min-height: 160px;
   display: flex;
   align-items: center;
-  transition: box-shadow var(--duration-base) var(--ease-out),
-              background var(--duration-base) var(--ease-out),
-              min-height var(--duration-base) var(--ease-out);
+  transition: box-shadow var(--duration-base) var(--ease-out);
 }
 
 .site-header.is-scrolled {
   box-shadow: 0 1px 0 rgba(0,0,0,0.4), var(--shadow-sm);
-  background: rgba(15, 40, 20, 0.97);
-  min-height: var(--header-height);
 }
 
 .site-header__inner {
@@ -861,14 +854,9 @@ small, .text-small { font-size: var(--text-sm); }
 }
 
 .site-header__logo svg {
-  height: 80px;
+  height: 120px;
   width: auto;
   display: block;
-  transition: height var(--duration-base) var(--ease-out);
-}
-
-.site-header.is-scrolled .site-header__logo svg {
-  height: 40px;
 }
 
 .site-header__tagline {
@@ -1821,7 +1809,7 @@ small, .text-small { font-size: var(--text-sm); }
   <defs>
     <style>
       .cls-1 {
-        fill: #ffffff;
+        fill: #010101;
       }
 
       .cls-2 {
@@ -2068,7 +2056,7 @@ small, .text-small { font-size: var(--text-sm); }
   <defs>
     <style>
       .cls-1 {
-        fill: #ffffff;
+        fill: #010101;
       }
 
       .cls-2 {

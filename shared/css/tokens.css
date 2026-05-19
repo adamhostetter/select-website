@@ -118,8 +118,8 @@
   --container-2xl: 1600px;
   --container-content: 1440px;
 
-  --header-height: 80px;
-  --header-height-mobile: 64px;
+  --header-height: 160px;
+  --header-height-mobile: 100px;
   --pad-x: clamp(1.25rem, 4vw, 3rem);
 
   /* RADII (Columbus values + radius-none/2xl kept for components.css) */
