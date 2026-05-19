@@ -281,7 +281,9 @@
         </div>
 
         <div class="contact-row">
-          <form class="service-form" action="#" method="post" novalidate>
+          <form class="service-form" action="/api/contact" method="POST" data-form-handler novalidate>
+            <input type="hidden" name="_form" value="select-contact" />
+            <input type="text" name="_honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;pointer-events:none" />
             <div class="form-grid">
               <div class="form-field">
                 <label class="form-label" for="f-name">Full name <span class="required">*</span></label>
@@ -321,6 +323,7 @@
                 <span class="form-help">Including equipment model numbers (if you have them) helps us send the right tech.</span>
               </div>
             </div>
+            <div data-form-error role="alert" hidden style="margin-top:1rem;padding:0.75rem 1rem;background:#FEF2F2;border:1px solid #FCA5A5;color:#7F1D1D;border-radius:8px;font-size:0.875rem"></div>
             <div class="form-actions">
               <button type="submit" class="btn btn--primary btn--lg">Request Service</button>
               <span class="form-help">Or call <a href="tel:{{phoneE164}}" style="font-weight: 600">{{phone}}</a> — dispatch handles after-hours and emergency calls on the same line.</span>
@@ -409,5 +412,6 @@
   <script>
     /* {{INLINE_BRANCH_JS}} — mobile-nav toggle, header scroll, dropdowns, hero video, parallax */
   </script>
+  <script src="/assets/js/form-handler.js" defer></script>
 </body>
 </html>
