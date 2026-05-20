@@ -7,7 +7,7 @@
   "careersUrl": "https://firstcallmechanical.com/mechanical/careers",
 
   "featuresEyebrow": "What we service",
-  "featuresHeading": "From the ice machine to the cold-storage warehouse.",
+  "featuresHeading": "From the ice machine to the walk-in cooler.",
   "featuresLead": "Restaurants, supermarkets, convenience stores, distribution centers — Long Island runs on refrigeration. We service the full equipment list and keep parts on the trucks for the common failures.",
 
   "features": [
@@ -37,9 +37,9 @@
       "body": "EPA Section 608 leak detection and repair, refrigerant recovery and tracking, and AIM Act / HFC phase-down planning so your equipment stays legal as the rules change."
     },
     {
-      "icon": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z\"/></svg>",
-      "title": "Cold storage & industrial",
-      "body": "Distribution centers, food processing, pharmaceutical cold chain — engine-room service, rack systems, ammonia and CO2 systems on request."
+      "icon": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 7h18M3 12h18M3 17h18\"/></svg>",
+      "title": "Rack systems & remote condensers",
+      "body": "Supermarket and convenience-store rack systems, parallel compressor racks, remote condensing units — controls tuning, leak isolation, and end-of-life replacement planning."
     }
   ],
 
