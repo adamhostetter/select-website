@@ -42,3 +42,19 @@ Run `cd "Select" && node scripts/dev-server.js` to preview locally, or open `Sel
 - Photo strip — `photoStrip` array empty; add 2+ job-site shots to `shared/img/photos/select/`
 - Careers URL — currently links to FirstCall Mechanical careers hub; flip to Select-specific page if one exists
 - Equipment list — adapted for HVAC + controls + refrigeration scope; have the West Babylon team review for accuracy
+
+## Anti-spam — Cloudflare Turnstile
+
+Contact form is wired to Resend (`_worker.js` → `select-contact`) but has only a single-layer honeypot. Mirror the Starnes implementation (Starnes repo, commit `b70d9f8` — "Add anti-spam layers to contact form: Turnstile + time + origin") when spam volume warrants. Four layers, all silent-ok on rejection so bots can't learn:
+
+1. **Origin allowlist** — reject POSTs whose `Origin` isn't `selectenv.com` / `www.selectenv.com` / preview `*.pages.dev`
+2. **Honeypot** — already in place
+3. **Min-submit-time** (3 s) — JS writes `Date.now()` into a hidden `_ts` field; worker rejects fast submissions
+4. **Cloudflare Turnstile** — verify the widget token via `challenges.cloudflare.com/turnstile/v0/siteverify`
+
+Setup (~15 min):
+1. Cloudflare dash → Turnstile → Add widget named `Select Contact Form`; hostnames `selectenv.com`, `www.selectenv.com`, `select-website.pages.dev` (or whatever the Pages preview hostname is); mode Managed
+2. Copy the site key (public) and secret key (private)
+3. Pages project → Settings → Variables and Secrets → add `TURNSTILE_SECRET_KEY` as a Secret (Production)
+4. Copy the 4-layer pattern from Starnes `_worker.js` into Select `_worker.js`; copy the widget div + `_ts` hidden input + Turnstile script tag into `index.html` and `shared/templates/branch.html`; copy the `_ts` setter in `assets/js/form-handler.js`. Swap the Starnes site key for Select's.
+5. Push — Cloudflare redeploys with the secret available.
