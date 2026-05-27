@@ -1,0 +1,103 @@
+{
+  "slug": "west-babylon",
+  "name": "Select",
+  "shortName": "West Babylon",
+  "tagline": "A FirstCall Company",
+  "heroHeading": "Long Island's commercial HVAC, controls, and refrigeration team since 1980.",
+  "heroParagraph": "Four-plus decades serving the South Shore — from cold storage at the docks to building automation in corporate campuses to ice machines behind the counter. Local crews. National platform. One call.",
+
+  "phone": "(631) 694-5287",
+  "phoneE164": "+16316945287",
+  "phoneEmergency": "",
+  "phoneEmergencyE164": "",
+  "phoneEmergencyTodo": "Optional — does Select run a separate 24/7 emergency line, or does the main number cover after-hours? If main number does double duty, leave blank and we'll route the emergency CTA to the main phone.",
+  "email": "dispatch@selectenv.com",
+  "emailTodo": "Placeholder per Adam. Replace with the real dispatch alias once confirmed.",
+
+  "address": {
+    "street": "210 Dale Street",
+    "city": "West Babylon",
+    "state": "NY",
+    "zip": "11704"
+  },
+  "mapCoords": { "lat": 40.7187, "lng": -73.3540 },
+  "mapCoordsTodo": "Approximated from West Babylon centroid. Refine to street-level once we have a confirmed Google Maps pin for 210 Dale St.",
+
+  "canonicalUrl": "https://selectenv.com",
+  "parentLink": "https://firstcallmechanical.com",
+  "isExternalDomain": true,
+  "brandColor": "via FCM tokens (forest green #1A4120 primary, blue #5BA3D6 accent)",
+
+  "heroVideo": "",
+  "heroPhoto": "shared/img/photos/select/west-babylon-hero.webp",
+
+  "careersUrl": "https://firstcallmechanical.com/mechanical/careers",
+  "careersUrlTodo": "Confirm whether Select has its own careers page or should link to FCM's careers hub.",
+
+  "industriesLead": "From the marina at Babylon Town Dock to the cold-storage facility in Bay Shore to the campus chiller plant at Stony Brook — if a building keeps Long Island running, odds are Select has worked on it.",
+  "industriesLeadTodo": "Landmark names are best-guess for tone. Swap in actual representative customer types/landmarks once confirmed with the Select team.",
+
+  "photoStrip": [],
+  "photoStripTodo": "Need 2+ job-site / crew / equipment photos saved to shared/img/photos/select/ (Starnes used .avif). Until then, the photo strip section will render empty — confirm whether to hide that section or use FCM corporate placeholder shots.",
+
+  "services": [
+    {
+      "key": "commercial",
+      "slug": "commercial-hvac",
+      "title": "Commercial HVAC",
+      "body": "Service and project work for commercial and industrial facilities — RTUs, chillers, boilers, air handlers, and VRF systems across Long Island."
+    },
+    {
+      "key": "controls",
+      "slug": "building-controls",
+      "title": "Building Controls",
+      "body": "Design, installation, and integration of building automation systems — BACnet, Niagara, JCI Metasys, Siemens, Honeywell. Open protocols, no lock-in."
+    },
+    {
+      "key": "refrigeration",
+      "slug": "commercial-refrigeration",
+      "title": "Commercial Refrigeration",
+      "body": "Walk-in coolers and freezers, reach-ins, ice machines, beverage equipment, and refrigerated display cases — service, repair, and replacement."
+    },
+    {
+      "key": "planned",
+      "slug": "planned-maintenance",
+      "title": "Planned Maintenance",
+      "body": "Programmatic service plans built around your equipment mix — predictable scheduling, asset-level reporting, priority dispatch for emergencies."
+    },
+    {
+      "key": "emergency",
+      "slug": "emergency",
+      "title": "Emergency Services",
+      "body": "24/7 emergency response on a staffed dispatch line. When a chiller fails on the hottest day of the year, you get a human and a truck — not a voicemail."
+    },
+    {
+      "key": "projects",
+      "slug": "project-support",
+      "title": "Project Support",
+      "body": "Equipment changeouts, system retrofits, refrigeration installations, and capital projects — design, install, commission, and service after."
+    }
+  ],
+
+  "technicalExperience": [
+    "Air Handlers (AHUs)",
+    "BACnet, Modbus, LonWorks, MQTT integration",
+    "Boilers — Commercial & Industrial",
+    "Building Automation — JCI Metasys, Siemens, Honeywell, Tridium Niagara",
+    "Chillers — Air-Cooled & Water-Cooled",
+    "Cooling Towers",
+    "Ice Machines — Hoshizaki, Manitowoc, Scotsman",
+    "Refrigerated Display Cases",
+    "Refrigeration — Commercial & Industrial",
+    "Refrigeration — Walk-In Coolers & Freezers",
+    "Reach-In Coolers & Freezers",
+    "Rooftop Units (RTUs)",
+    "Split Systems — Commercial",
+    "VRF / VRV Systems",
+    "Water Heaters — Commercial Tank & Tankless"
+  ],
+  "technicalExperienceTodo": "Equipment list adapted for Select's commercial HVAC + controls + refrigeration scope. Confirm with the West Babylon team — add/remove based on actual capability and preferred manufacturer partners.",
+
+  "stateLicenses": [],
+  "stateLicensesTodo": "BLOCKING for trust footer: NY commercial HVAC/refrigeration contractors typically need to disclose NYC/Long Island licensing, NYS Refrigeration Trade certifications, EPA Section 608 for refrigerant handling, and any town/county registrations (Babylon, Suffolk County). Capture license numbers for footer display."
+}
