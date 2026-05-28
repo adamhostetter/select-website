@@ -37,7 +37,7 @@ export default {
 // =============================================================================
 
 const FORM_ROUTING = {
-  "select-contact": ["service@selectenv.com", "Adam.Hostetter@firstcallgroup.com"],
+  "select-contact": ["dispatch@selectenv.com", "Adam.Hostetter@firstcallgroup.com"],
 };
 
 const FORM_LABELS = {
